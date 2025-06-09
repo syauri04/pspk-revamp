@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PSPK Homepage</title>
+    <link href="/src/css/style.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  </head>
+  <body class="font-inter text-[#353334]">
+    <!-- Header -->
+    <div id="header"></div>
+
+    <!-- Initiative Section -->
+    <section>
+      <div class="grid md:grid-cols-2 grid-cols-1">
+        <!-- LSK Text -->
+        <div class="bg-[#2D3C96] p-10 text-white flex items-center">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-[100px]">
+            <h3 class="text-white text-2xl font-helvetica font-bold mb-4">Lingkar Studi Kebijakan Pendidikan</h3>
+            <p class="text-base leading-[100%]">Efforts to activate the education scholar research ecosystem to encourage the formulation of data and research-based education policies</p>
+            <a href="#" class="inline-block mt-10 px-[19px] py-[13px] rounded-[15px] bg-[#FFC65D] text-[#353334] font-semibold hover:bg-yellow-500 transition"> Selengkapnya </a>
+          </div>
+        </div>
+
+        <!-- LSK Image -->
+        <div class="bg-white flex justify-center items-center p-10">
+          <img src="/src/img/transformasi-lsk.png" alt="LSK Logo" class="w-full md:w-[597px] h-auto" />
+        </div>
+
+        <!-- LDB Image -->
+        <div class="bg-white flex justify-center items-center p-10">
+          <img src="/src/img/transformasi-ldb.png" alt="LDB Logo" class="w-full md:w-[597px] h-auto" />
+        </div>
+
+        <!-- LDB Text -->
+        <div class="bg-[#2D3C96] p-10 text-white flex items-center">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-[100px]">
+            <h3 class="text-white text-2xl font-helvetica font-bold mb-4">Lingkar Daerah Belajar</h3>
+            <p class="text-base leading-[100%]">Efforts to activate the education ecosystem in various regions in Indonesia to promote educational equity.</p>
+            <a href="#" class="inline-block mt-10 px-[19px] py-[13px] rounded-[15px] bg-[#FFC65D] text-[#353334] font-semibold hover:bg-yellow-500 transition"> Selengkapnya </a>
+          </div>
+        </div>
+
+        <!-- PEMANTIK Text -->
+        <div class="bg-[#2D3C96] p-10 text-white flex items-center">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-[100px]">
+            <h3 class="text-white text-2xl font-helvetica font-bold mb-4">Pengukuran Mandiri Literasi dan Numerasi PSPK (PEMANTIK)</h3>
+            <p class="text-base leading-[100%]">A Literacy and Numeracy Assessment Platform for children to provide information as the basis for data-driven learning interventions that are tailored to the child’s capacity.</p>
+            <a href="#" class="inline-block mt-10 px-[19px] py-[13px] rounded-[15px] bg-[#FFC65D] text-[#353334] font-semibold hover:bg-yellow-500 transition"> Selengkapnya </a>
+          </div>
+        </div>
+
+        <!-- PEMANTIK Image -->
+        <div class="bg-white flex justify-center items-center p-10">
+          <img src="/src/img/transformasi-pemantik.png" alt="Pemantik Logo" class="w-full md:w-[597px] h-auto" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <div id="footer"></div>
+    <script>
+      // Load header
+      fetch("/components/header.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("header").innerHTML = data;
+
+          // Setelah header dimuat, pasang event listener
+          const toggleButton = document.getElementById("menu-toggle");
+          const mobileMenu = document.getElementById("mobile-menu");
+
+          if (toggleButton && mobileMenu) {
+            toggleButton.addEventListener("click", () => {
+              mobileMenu.classList.toggle("hidden");
+            });
+          }
+        });
+
+      // Load footer (tidak butuh event listener)
+      fetch("/components/footer.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("footer").innerHTML = data;
+        });
+    </script>
+  </body>
+</html>

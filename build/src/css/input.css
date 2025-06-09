@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-inter: "Inter", sans-serif;
+}
+@layer utilities {
+  .font-helvetica {
+    font-family: "Helvetica", sans-serif;
+  }
+}
+@font-face {
+  font-family: Helvetica;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../font/Helvetica.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: Helvetica;
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../font/Helvetica-Bold.woff2") format("woff2");
+}

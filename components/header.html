@@ -1,0 +1,105 @@
+<style>
+  #mobile-menu.open {
+    max-height: 600px; /* Sesuaikan dengan kebutuhan maksimal tinggi menu */
+    padding-top: 1rem; /* Atur ulang padding saat open */
+    padding-bottom: 1.5rem;
+  }
+</style>
+<!-- Header -->
+<header class="bg-white shadow py-4 text-[#353334]">
+  <div class="max-w-7xl mx-auto px-4 flex items-center justify-between">
+    <!-- Logo -->
+    <a href="index.html" class="flex items-center space-x-3">
+      <img src="/src/img/logo.svg" alt="Logo" class="h-12 w-auto lg:h-18" />
+    </a>
+
+    <!-- Desktop Navigation -->
+    <nav class="hidden lg:flex items-center space-x-6 font-helvetica font-normal text-base">
+      <a href="about.html" class="hover:text-blue-600">About</a>
+      <a href="initiative.html" class="hover:text-blue-600">Initiatives</a>
+      <a href="#" class="hover:text-blue-600">Activities</a>
+      <a href="#" class="hover:text-blue-600">Publications</a>
+      <a href="#" class="hover:text-blue-600">Work With Us</a>
+      <a href="contact.html" class="hover:text-blue-600">Contact Us</a>
+    </nav>
+
+    <!-- Desktop Right Buttons -->
+    <div class="hidden lg:flex items-center space-x-8">
+      <button class="text-[20px] font-helvetica font-bold">ID</button>
+      <button class="text-[#353334] hover:text-gray-400 cursor-pointer relative inline-flex items-center">
+        <svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="relative top-[2px]">
+          <path
+            d="M7.5 0.25C9.38016 0.25 10.9822 0.90444 12.29 2.21094L12.5273 2.45996C13.6768 3.71933 14.2519 5.23681 14.25 7L14.2441 7.2832C14.2214 7.84609 14.1305 8.38635 13.9707 8.90332L13.8857 9.15918C13.6708 9.75781 13.3854 10.2975 13.0312 10.7773L19.3535 17.0996L17.5996 18.8535L11.2773 12.5312C10.8652 12.8354 10.4092 13.0887 9.90918 13.29L9.65918 13.3857C8.98056 13.6293 8.26018 13.75 7.5 13.75C5.73633 13.75 4.2188 13.1747 2.95996 12.0264L2.71094 11.7891C1.40504 10.4825 0.75069 8.88073 0.75 7L0.757812 6.65039C0.83402 4.92004 1.48544 3.4358 2.71094 2.21094L2.95996 1.97363C4.21987 0.825266 5.73743 0.25 7.5 0.25ZM7.2793 2.75488C6.18991 2.80218 5.26428 3.21233 4.49023 3.98926C3.66402 4.81863 3.25199 5.81754 3.25 7L3.25488 7.21973C3.30156 8.30648 3.71204 9.23255 4.49023 10.0107L4.64746 10.1621C5.44527 10.891 6.39186 11.2523 7.49902 11.25H7.5L7.71973 11.2451C8.80857 11.1969 9.7355 10.7864 10.5117 10.0107C11.3393 9.18364 11.7506 8.18488 11.75 7C11.7493 5.81477 11.3372 4.81673 10.5107 3.99023C9.68427 3.16377 8.68592 2.75132 7.5 2.75L7.2793 2.75488Z"
+            fill="currentColor"
+            stroke="currentColor"
+            stroke-width="0.5"
+          />
+        </svg>
+      </button>
+      <button class="bg-blue-900 text-white px-[19px] py-[23px] rounded-[15px] hover:bg-blue-800 font-bold text-[20px]">Mari Kolaborasi</button>
+    </div>
+
+    <!-- Hamburger Button (mobile) -->
+    <button id="menu-toggle" class="lg:hidden focus:outline-none">
+      <svg class="w-[18px] h-[18px] text-gray-800" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="lg:hidden max-h-0 overflow-hidden transition-all duration-500 ease-in-out px-4 pt-0 pb-0 flex flex-col items-center text-center">
+    <nav class="flex flex-col space-y-4 font-helvetica font-normal text-base w-full items-center">
+      <a href="about.html" class="hover:text-blue-600">About</a>
+      <a href="initiative.html" class="hover:text-blue-600">Initiatives</a>
+      <a href="#" class="hover:text-blue-600">Activities</a>
+      <a href="#" class="hover:text-blue-600">Publications</a>
+      <a href="#" class="hover:text-blue-600">Work With Us</a>
+      <a href="contact.html" class="hover:text-blue-600">Contact Us</a>
+    </nav>
+
+    <div class="flex items-center justify-center space-x-4 mt-6">
+      <button class="text-[20px] font-bold">ID</button>
+      <button class="text-[#353334] hover:text-gray-400">
+        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M5.5 11a5.5 5.5 0 1111 0 5.5 5.5 0 01-11 0z" />
+        </svg>
+      </button>
+    </div>
+
+    <button class="mt-4 bg-blue-900 text-white px-[19px] py-[23px] rounded-[15px] hover:bg-blue-800 font-bold text-sm w-full">Mari Kolaborasi</button>
+  </div>
+</header>
+
+<!-- <header class="bg-white shadow py-4 text-[#353334]">
+  <div class="max-w-7xl mx-auto px-4 flex items-center justify-between">
+    <div class="flex items-center space-x-3 cursor-pointer">
+      <a href="index.html"><img src="/src/img/logo.svg" alt="Logo" class="h-18 lg:h-16 w-auto" /></a>
+    </div>
+    <nav class="hidden md:flex space-x-8 md:space-x-4 font-helvetica font-normal md:text-sm">
+      <a href="about.html" class="hover:text-blue-600">About</a>
+      <a href="initiative.html" class="hover:text-blue-600">Initiatives</a>
+      <a href="#" class="hover:text-blue-600">Activities</a>
+      <a href="#" class="hover:text-blue-600">Publications</a>
+      <a href="#" class="hover:text-blue-600">Work With Us</a>
+      <a href="contact.html" class="hover:text-blue-600">Contact Us</a>
+    </nav>
+    <div class="flex items-center space-x-8 lg:space-x-4 md:space-x-2.5">
+      <button class="text-[20px] font-helvetica font-bold cursor-pointer">ID</button>
+      <button class="text-[#353334] hover:text-gray-400 cursor-pointer relative inline-flex items-center">
+        <svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="relative top-[2px]">
+          <path
+            d="M7.5 0.25C9.38016 0.25 10.9822 0.90444 12.29 2.21094L12.5273 2.45996C13.6768 3.71933 14.2519 5.23681 14.25 7L14.2441 7.2832C14.2214 7.84609 14.1305 8.38635 13.9707 8.90332L13.8857 9.15918C13.6708 9.75781 13.3854 10.2975 13.0312 10.7773L19.3535 17.0996L17.5996 18.8535L11.2773 12.5312C10.8652 12.8354 10.4092 13.0887 9.90918 13.29L9.65918 13.3857C8.98056 13.6293 8.26018 13.75 7.5 13.75C5.73633 13.75 4.2188 13.1747 2.95996 12.0264L2.71094 11.7891C1.40504 10.4825 0.75069 8.88073 0.75 7L0.757812 6.65039C0.83402 4.92004 1.48544 3.4358 2.71094 2.21094L2.95996 1.97363C4.21987 0.825266 5.73743 0.25 7.5 0.25ZM7.2793 2.75488C6.18991 2.80218 5.26428 3.21233 4.49023 3.98926C3.66402 4.81863 3.25199 5.81754 3.25 7L3.25488 7.21973C3.30156 8.30648 3.71204 9.23255 4.49023 10.0107L4.64746 10.1621C5.44527 10.891 6.39186 11.2523 7.49902 11.25H7.5L7.71973 11.2451C8.80857 11.1969 9.7355 10.7864 10.5117 10.0107C11.3393 9.18364 11.7506 8.18488 11.75 7C11.7493 5.81477 11.3372 4.81673 10.5107 3.99023C9.68427 3.16377 8.68592 2.75132 7.5 2.75L7.2793 2.75488Z"
+            fill="currentColor"
+            stroke="currentColor"
+            stroke-width="0.5"
+          />
+        </svg>
+      </button>
+
+      <button class="bg-blue-900 text-white px-[19px] py-[23px] lg:px-3 lg:py-4 md:px-2.5 md:py-2.5 rounded-[15px] hover:bg-blue-800 font-helvetica font-bold text-[16px] lg:text-sm md:text-[10px] leading-[16px] tracking-normal">
+        Mari Kolaborasi
+      </button>
+    </div>
+  </div>
+</header> -->

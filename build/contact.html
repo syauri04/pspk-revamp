@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PSPK Homepage</title>
+    <link href="/src/css/style.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  </head>
+  <body class="font-inter text-[#353334]">
+    <!-- Header -->
+    <div id="header"></div>
+
+    <!-- Contact Section -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 min-h-screen">
+      <!-- Form Card -->
+      <div class="flex justify-center items-center p-6">
+        <div class="bg-white shadow-lg rounded-[15px] w-full max-w-md p-8">
+          <h2 class="text-[#29378B] text-helvetica font-bold text-xl mb-12 text-center text-2xl">Get in Touch</h2>
+          <form action="#">
+            <div class="space-y-4">
+              <div>
+                <label class="block text-base font-semibold mb-3" for="nama">Nama*</label>
+                <input id="nama" type="text" class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#29378B]" required />
+              </div>
+              <div>
+                <label class="block text-base font-semibold mb-3" for="email">Email*</label>
+                <input id="email" type="email" class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#29378B]" required />
+              </div>
+              <div>
+                <label class="block text-base font-semibold mb-3" for="phone">Telephone Number*</label>
+                <input id="phone" type="tel" class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#29378B]" required />
+              </div>
+              <div class="mb-12">
+                <label class="block text-base font-semibold mb-3" for="message">Message</label>
+                <textarea id="message" rows="4" class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#29378B]"></textarea>
+              </div>
+              <button type="submit" class="w-full bg-[#29378B] text-white font-semibold py-2 rounded-md hover:bg-[#1f2e70] transition">Submit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- Image & Newsletter -->
+      <div class="relative">
+        <img src="/src/img/bg-contact.png" alt="Children Saluting" class="w-full h-full object-cover" />
+
+        <!-- Newsletter Card -->
+        <div class="absolute bottom-28 left-20 bg-white shadow-md rounded-[15px] p-10 max-w-[590px] w-[90%]">
+          <h3 class="font-bold font-helvetica mb-1 text-base text-[#29378B]">Subscribe to our newsletter</h3>
+          <p class="text-base mb-4">Get a daily newsletter with our best research on top issues</p>
+          <form class="flex space-x-2">
+            <input type="email" placeholder="Email" class="flex-1 border border-gray-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#29378B]" />
+            <button type="submit" class="bg-[#29378B] text-white px-4 py-2 rounded-md hover:bg-[#1f2e70] transition text-sm">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div id="footer"></div>
+    <script>
+      // Load header
+      fetch("/components/header.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("header").innerHTML = data;
+
+          // Setelah header dimuat, pasang event listener
+          const toggleButton = document.getElementById("menu-toggle");
+          const mobileMenu = document.getElementById("mobile-menu");
+
+          if (toggleButton && mobileMenu) {
+            toggleButton.addEventListener("click", () => {
+              mobileMenu.classList.toggle("hidden");
+            });
+          }
+        });
+
+      // Load footer (tidak butuh event listener)
+      fetch("/components/footer.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("footer").innerHTML = data;
+        });
+    </script>
+  </body>
+</html>

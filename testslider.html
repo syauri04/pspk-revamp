@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Swiper Coverflow Kilas Pendidikan</title>
+    <link href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+      .swiper-blur-left,
+      .swiper-blur-right {
+        position: absolute;
+        top: 0;
+        width: 120px;
+        height: 100%;
+        z-index: 10;
+        pointer-events: none;
+      }
+
+      .swiper-blur-left {
+        left: 0;
+        background: linear-gradient(to right, rgba(41, 55, 139, 1), rgba(41, 55, 139, 0));
+      }
+
+      .swiper-blur-right {
+        right: 0;
+        background: linear-gradient(to left, rgba(41, 55, 139, 1), rgba(41, 55, 139, 0));
+      }
+    </style>
+  </head>
+
+  <body class="bg-[#29378B] text-white">
+    <section class="py-20 relative overflow-hidden">
+      <div class="max-w-7xl mx-auto px-4">
+        <h2 class="text-4xl font-bold text-center mb-12">Latest Publications</h2>
+
+        <!-- Blur Sides -->
+        <div class="swiper-blur-left"></div>
+        <div class="swiper-blur-right"></div>
+
+        <div class="swiper publication-swiper relative">
+          <div class="swiper-wrapper">
+            <!-- SLIDE 1 -->
+            <div class="swiper-slide !w-[430px] bg-white rounded-[25px] shadow-md">
+              <div class="min-h-[300px] flex items-center justify-center">
+                <img src="https://via.placeholder.com/400x200?text=Kilas+Pendidikan" alt="Kilas Pendidikan" class="max-h-full object-contain" />
+              </div>
+              <div class="px-10 pb-20">
+                <h3 class="text-xl font-bold text-gray-800 leading-snug mb-3.5">Akses yang Berkeadilan ke Sekolah yang Berkualitas dan Terjangkau</h3>
+                <div class="flex items-center text-gray-500 space-x-3 text-base mb-2">
+                  <img src="https://via.placeholder.com/20x20?text=📅" alt="" class="w-[22.5px] h-[25px]" />
+                  <span>18 Juni 2025</span>
+                </div>
+                <div class="flex items-center text-gray-500 space-x-3 text-base">
+                  <img src="https://via.placeholder.com/20x20?text=⏱" alt="" class="w-[22.5px] h-[25px]" />
+                  <span>6 menit waktu baca</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- SLIDE 2 -->
+            <div class="swiper-slide !w-[430px] bg-white rounded-[25px] shadow-md">
+              <div class="min-h-[300px] flex items-center justify-center">
+                <img src="https://via.placeholder.com/400x200?text=Kilas+Pendidikan+2" alt="Kilas Pendidikan" class="max-h-full object-contain" />
+              </div>
+              <div class="px-10 pb-20">
+                <h3 class="text-xl font-bold text-gray-800 leading-snug mb-3.5">Jalan Panjang Program Prabajatan dalam Memenuhi Kebutuhan Guru Profesional</h3>
+                <div class="flex items-center text-gray-500 space-x-3 text-base mb-2">
+                  <img src="https://via.placeholder.com/20x20?text=📅" alt="" class="w-[22.5px] h-[25px]" />
+                  <span>14 Juni 2025</span>
+                </div>
+                <div class="flex items-center text-gray-500 space-x-3 text-base">
+                  <img src="https://via.placeholder.com/20x20?text=⏱" alt="" class="w-[22.5px] h-[25px]" />
+                  <span>5 menit waktu baca</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- SLIDE 3 -->
+            <div class="swiper-slide !w-[430px] bg-white rounded-[25px] shadow-md">
+              <div class="min-h-[300px] flex items-center justify-center">
+                <img src="https://via.placeholder.com/400x200?text=Kilas+Pendidikan+3" alt="Kilas Pendidikan" class="max-h-full object-contain" />
+              </div>
+              <div class="px-10 pb-20">
+                <h3 class="text-xl font-bold text-gray-800 leading-snug mb-3.5">PSPK Edisi Khusus: Menyikapi Rapor Pendidikan dan Brief Kebijakan</h3>
+                <div class="flex items-center text-gray-500 space-x-3 text-base mb-2">
+                  <img src="https://via.placeholder.com/20x20?text=📅" alt="" class="w-[22.5px] h-[25px]" />
+                  <span>10 Juni 2025</span>
+                </div>
+                <div class="flex items-center text-gray-500 space-x-3 text-base">
+                  <img src="https://via.placeholder.com/20x20?text=⏱" alt="" class="w-[22.5px] h-[25px]" />
+                  <span>4 menit waktu baca</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Navigation -->
+          <div class="swiper-button-prev !text-white !-left-6 !top-1/2"></div>
+          <div class="swiper-button-next !text-white !-right-6 !top-1/2"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script>
+      var swiper = new Swiper(".publication-swiper", {
+        effect: "coverflow",
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: "auto",
+        loop: true,
+        coverflowEffect: {
+          rotate: 0,
+          stretch: 0,
+          depth: 150,
+          modifier: 2,
+          slideShadows: false,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+    </script>
+  </body>
+</html>

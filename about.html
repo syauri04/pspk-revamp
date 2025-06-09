@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PSPK Homepage</title>
+    <link href="/src/css/style.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  </head>
+  <body class="font-inter text-[#353334]">
+    <!-- Header -->
+    <div id="header"></div>
+
+    <section class="bg-[#2D3C96] text-white py-16">
+      <div class="max-w-7xl mx-auto px-4">
+        <h1 class="text-5xl font-helvetica font-bold">Siapa Kami?</h1>
+      </div>
+    </section>
+
+    <!-- Tentang Kami -->
+    <section class="grid md:grid-cols-2 grid-cols-1">
+      <div class="h-full">
+        <img src="/src/img/bg-about1.png" alt="Image" class="w-full h-full object-cover" />
+      </div>
+      <div class="flex items-center px-[110px]">
+        <p class="text-base leading-[100%]">
+          Sejak berdiri di tahun 2015, Pusat Studi Pendidikan dan Kebijakan (PSPK) sebagai yayasan nonprofit independen terus berupaya melakukan kolaborasi lintas peran demi mengaktivasi ekosistem kebijakan pendidikan yang berpihak kepada
+          anak.
+        </p>
+      </div>
+    </section>
+
+    <!-- Prinsip Kerja Kami -->
+    <section class="bg-[#2D3C96] text-white py-20">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="mb-20">
+          <h2 class="text-4xl font-helvetica font-bold text-center md:text-left">Prinsip Kerja Kami</h2>
+        </div>
+        <div class="grid md:grid-cols-4 grid-cols-2 gap-10 text-base text-center py-14">
+          <div class="flex flex-col items-center">
+            <img src="/src/img/prinsip-1.png" alt="Ikon 1" class="mb-7 w-auto max-h-[127px]" />
+            <p class="font-bold font-helvetica text-xl leading-[100%] mb-2.5">Berpihak Kepada Anak</p>
+            <p class="text-base font-normal">Mengutamakan kepentingan dan kesejahteraan anak</p>
+          </div>
+          <div class="flex flex-col items-center">
+            <img src="/src/img/prinsip-2.png" alt="Ikon 2" class="mb-7 w-auto max-h-[127px]" />
+            <p class="font-bold font-helvetica text-xl leading-[100%] mb-2.5">Berbasis Ilmu Pengetahuan</p>
+            <p class="text-base font-normal">Mengutamakan kepentingan dan kesejahteraan anak</p>
+          </div>
+          <div class="flex flex-col items-center">
+            <img src="/src/img/prinsip-3.png" alt="Ikon 3" class="mb-7 w-auto max-h-[127px]" />
+            <p class="font-bold font-helvetica text-xl leading-[100%] mb-2.5">Independen</p>
+            <p class="text-base font-normal">Organisasi nonprofit yang tidak memiliki afiliasi secara politik maupun agama</p>
+          </div>
+          <div class="flex flex-col items-center">
+            <img src="/src/img/prinsip-4.png" alt="Ikon 4" class="mb-7 w-auto max-h-[127px]" />
+            <p class="font-bold font-helvetica text-xl leading-[100%] mb-2.5">Inklusif</p>
+            <p class="text-base font-normal">Mengedepankan empati dalam upaya mendorong pendidikan pada anak, pspk berkolaborasi dengan berbagai mitra</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mengapa Berpihak Kepada Anak -->
+    <section class="grid md:grid-cols-2 grid-cols-1">
+      <div class="flex flex-col justify-center p-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-[100px]">
+          <h2 class="text-4xl font-helvetica font-bold mb-6">Mengapa Berpihak Kepada Anak?</h2>
+          <p class="text-bsase leading-[100%] mb-8">
+            Bagi kami, anak tidak terbatas pada individu usia kanak-kanak saja tetapi pada dasarnya anak adalah seluruh murid dan mahasiswa. Mereka adalah anak bangsa yang merupakan penerima manfaat utama dari Sistem Pendidikan. Menyadari
+            bahwa suatu kebijakan tidak dapat memenuhi harapan seluruh pemangku kepentingan, maka kami memilih anak sebagai pihak yang paling utama untuk menerima manfaat sebesar-besarnya dari semua kebijakan pendidikan.
+          </p>
+          <a href="#" class="inline-block mt-10 px-[19px] py-[13px] rounded-[15px] bg-[#FFC65D] text-[#353334] font-semibold hover:bg-yellow-500 transition"> Selengkapnya </a>
+        </div>
+      </div>
+      <div>
+        <img src="/src/img/bg-about2.png" alt="Anak-anak" class="w-full h-full object-cover" />
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <div id="footer"></div>
+    <script>
+      // Load header
+      fetch("/components/header.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("header").innerHTML = data;
+
+          const toggleButton = document.getElementById("menu-toggle");
+          const mobileMenu = document.getElementById("mobile-menu");
+
+          if (toggleButton && mobileMenu) {
+            toggleButton.addEventListener("click", () => {
+              mobileMenu.classList.toggle("open");
+            });
+          }
+        });
+
+      // Load footer (tidak butuh event listener)
+      fetch("/components/footer.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("footer").innerHTML = data;
+        });
+    </script>
+  </body>
+</html>
